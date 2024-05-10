@@ -30,7 +30,13 @@ function hideCookiePrompts() {
       if (window.location.hostname.includes(siteUrl.trim())) {
         // If it matches, only then remove the elements
         elementIds.forEach(id => {
-          const element = document.getElementById(id.trim());
+          let element = document.getElementById(id.trim());
+          if (!element) {
+            element = document.querySelector('.' + id.trim().replace(/ /g, '.'));
+          }
+          if (!element) {
+            element = document.querySelector(id.trim());
+          }
           if (element) {
             element.remove();
           }
