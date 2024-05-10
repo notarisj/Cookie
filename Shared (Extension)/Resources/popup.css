@@ -13,3 +13,30 @@ body {
 @media (prefers-color-scheme: dark) {
     /* Dark Mode styles go here. */
 }
+
+#extension-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 10px;
+}
+
+#extension-info h1 {
+    font-size: 12pt;
+}
+
+#extension-info img {
+    width: 48px;
+    height: 48px;
+}
+
+button::before {
+    content: "";
+    display: block;
+    width: 100vw; /* This will make the line expand to all the available viewport width */
+    border-top: 1px solid #a4a4a4; /* This will make the line thinner and give it a muted color */
+    position: absolute;
+    left: 0;
+    margin-top: -22px;
+}
